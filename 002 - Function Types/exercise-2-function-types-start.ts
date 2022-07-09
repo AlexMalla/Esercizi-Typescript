@@ -4,7 +4,7 @@
 
 // Add types to this function declaration.
 
-function doubleThePopulation(value) {
+function doubleThePopulation(value: number): number {
     return value * 2;
 }
 
@@ -12,21 +12,22 @@ function doubleThePopulation(value) {
 
 doubleThePopulation(5);
 
-doubleThePopulation("6.12");
+doubleThePopulation(6.12);
 
 doubleThePopulation(8_526);
 
-doubleThePopulation(false);
+doubleThePopulation(200);
 
 // Alter this function so the `language2` parameter is optional.
 // Hint: Check `language2` is not `undefined` before passing it to `console.log()`.
 
-function languagesSpoken(country: string, language1: string, language2: string): void {
+function languagesSpoken(country: string, language1: string, language2?: string): void {
     console.log(`The languages spoken in ${country} are:`);
 
     console.log(language1);
-
-    console.log(language2);
+    if (typeof language2 == "string") {
+        console.log(language2);
+    }
 }
 
 languagesSpoken("Colombia", "Spanish", "English");
@@ -37,4 +38,4 @@ languagesSpoken("New Zealand", "English", "Māori");
 
 // ----
 
-export {};
+export { };
